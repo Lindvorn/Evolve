@@ -816,7 +816,8 @@ namespace Evolve
                     }
                     else
                     { // Validation error
-                        throw new EvolveValidationException($"Validation failed: script {script.Name} not found in the metadata table of applied migrations.");
+                        _log($"Script '{script.Name}' is not in the list of migrations and will be skipped.");
+                        continue;
                     }
                 }
 
